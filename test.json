@@ -1,0 +1,12 @@
+[
+  {
+    "name":"Star",
+    "type":"CssSelector",
+    "value":".listing-area .container-fluid>div>div:nth-child(2)>div>div>i"
+  },
+  {
+    "name":"updateInfo",
+    "type":"XPath",
+    "value":".fullHeight.mainCompCont button"
+  }
+]

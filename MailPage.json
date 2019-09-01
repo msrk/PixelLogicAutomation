@@ -1,0 +1,13 @@
+[
+
+  {
+    "name":"firstrow",
+    "type":"CssSelector",
+    "value":"Cp table tbody>tr:nth-child(1)"
+  },
+  {
+    "name":"verificationmail",
+    "type":"CssSelector",
+    "value":".gs >div:nth-child(3)  >div:nth-child(3) >div >div >table[align='center'] table tbody>tr:nth-child(3) a"
+  }
+]
