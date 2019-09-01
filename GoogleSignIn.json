@@ -22,7 +22,7 @@
   {
     "name":"passwordnext",
     "type":"CssSelector",
-    "value":"passwordNext"
+    "value":"#passwordNext"
   },
   {
     "name":"confirmpassword",

@@ -31,14 +31,15 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public WebDriver driver;
-    public ExtentHtmlReporter htmlReporter;
-    public ExtentReports extent;
-    public ExtentTest logger;
+    public static ExtentHtmlReporter htmlReporter;
+    public static ExtentReports extent;
+    public static ExtentTest logger;
 
     @BeforeTest
     public void startReport() {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/STMExtentReport.html");
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/ExtentReport.html");
         // Create an object of Extent Reports
+        
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host Name", "phptravels");
@@ -72,7 +73,7 @@ public class BaseTest {
 
         opch.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(opch);
-        driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES) ;
+        driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES) ;
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
 

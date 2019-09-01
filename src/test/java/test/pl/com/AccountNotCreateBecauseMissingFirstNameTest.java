@@ -16,7 +16,7 @@ public class AccountNotCreateBecauseMissingFirstNameTest extends BaseTest{
 
     @BeforeClass(alwaysRun = true)
     public void loadData() {
-        testData = getTestDataAsObjectArray("AccountNotCreatetBecauseMissingFirstNameTest.xlsx");
+        testData = getTestDataAsObjectArray("AccountNotCreatedBecauseMissingFirstNameTest.xlsx");
     }
 
     @DataProvider(name = "test1", parallel = false)
@@ -29,16 +29,21 @@ public class AccountNotCreateBecauseMissingFirstNameTest extends BaseTest{
 
     @Test(dataProvider = "test1")
     public void accountNotCreated(HashMap<String, String> columns) {
+        try {
+            logger = extent.createTest("To verify Account Not Created Because Missing First Name Test");
+            driver.get("https://www.phptravels.net/register");
+            TravelCreateForm travelCreateForm = new TravelCreateForm("TravelCreateForm.json", driver);
+            travelCreateForm.CreateForm("", columns.get("lastname"),
+                    columns.get("phone"), columns.get("email"),
+                    columns.get("password"), columns.get("confirmpassword"));
+            String vaidation = travelCreateForm.getValidationMessageCaseMissingFirstName();
+            Assert.assertEquals(vaidation, "The First name field is required.");
+        } catch (Exception e) {
+            logger.createNode(e.getStackTrace().toString());
+            logger.createNode("Test has failed");
+            Assert.assertTrue(false);
 
-        logger = extent.createTest("To verify Account Not Created Because Missing First Name Test");
-        driver.get("https://www.phptravels.net/register");
-        TravelCreateForm travelCreateForm = new TravelCreateForm("TravelCreateForm.json", driver);
-        travelCreateForm.CreateForm(columns.get("firstname"),columns.get("lastname"),
-                columns.get("phone"),columns.get("email"),
-                columns.get("password"),columns.get("confirmpassword"));
-        String vaidation=travelCreateForm.getValidationMessageCaseMissingFirstName();
-        Assert.assertEquals(vaidation,"The First name field is required.");
+        }
 
     }
-
 }

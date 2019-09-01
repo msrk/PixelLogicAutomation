@@ -25,15 +25,20 @@ public class AccountNotCreatedBecauseEmailAlreadyExistsTest extends BaseTest {
 
     @Test(dataProvider = "test3")
     public void accountNotCreated(HashMap<String, String> columns) {
-
-        logger = extent.createTest("To verify Account Not Created Because Email Already Exists Test");
-        driver.get("https://www.phptravels.net/register");
-        TravelCreateForm travelCreateForm = new TravelCreateForm("TravelCreateForm.json", driver);
-        travelCreateForm.CreateForm(columns.get("firstname"),columns.get("lastname"),
-                columns.get("phone"),columns.get("email"),
-                columns.get("password"),columns.get("confirmpassword"));
-        String vaidation=travelCreateForm.getValidationMessageEmailAleadyExists();
-        Assert.assertEquals(vaidation.contains("TEmail Already Exists."),true);
-
+try {
+    logger = extent.createTest("To verify Account Not Created Because Email Already Exists Test");
+    driver.get("https://www.phptravels.net/register");
+    TravelCreateForm travelCreateForm = new TravelCreateForm("TravelCreateForm.json", driver);
+    travelCreateForm.CreateForm(columns.get("firstname"), columns.get("lastname"),
+            columns.get("phone"), columns.get("email"),
+            columns.get("password"), columns.get("confirmpassword"));
+    String vaidation = travelCreateForm.getValidationMessageEmailAleadyExists();
+    Assert.assertEquals(vaidation.contains("TEmail Already Exists."), true);
+}
+    catch(Exception e){
+        logger.createNode(e.getStackTrace().toString());
+        logger.createNode("Test has failed");
+        Assert.assertTrue(false);
+}
     }
 }
