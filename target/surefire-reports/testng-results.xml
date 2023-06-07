@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-07T11:53:38 EET" name="Command line suite" finished-at="2023-06-07T11:54:21 EET" duration-ms="43260">
+    <groups>
+    </groups>
+    <test started-at="2023-06-07T11:53:38 EET" name="Command line test" finished-at="2023-06-07T11:54:21 EET" duration-ms="43260">
+      <class name="test.pl.com.CreateAccountTest">
+        <test-method is-config="true" signature="loadData()[pri:0, instance:test.pl.com.CreateAccountTest@ed7f8b4]" started-at="2023-06-07T11:53:39 EET" name="loadData" finished-at="2023-06-07T11:53:40 EET" duration-ms="1431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadData -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.pl.com.CreateAccountTest@ed7f8b4]" started-at="2023-06-07T11:53:40 EET" name="setup" finished-at="2023-06-07T11:53:47 EET" duration-ms="7063" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="createAccount(java.util.HashMap)[pri:0, instance:test.pl.com.CreateAccountTest@ed7f8b4]" started-at="2023-06-07T11:53:47 EET" name="createAccount" data-provider="test" finished-at="2023-06-07T11:54:20 EET" duration-ms="32783" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{null=, password=testrcm, username=testrcm}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccount -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:test.pl.com.CreateAccountTest@ed7f8b4]" started-at="2023-06-07T11:54:20 EET" name="getResult" finished-at="2023-06-07T11:54:21 EET" duration-ms="709" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createAccount status=SUCCESS method=CreateAccountTest.createAccount(java.util.HashMap)[pri:0, instance:test.pl.com.CreateAccountTest@ed7f8b4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+      </class> <!-- test.pl.com.CreateAccountTest -->
+      <class name="test.pl.com.BaseTest">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:test.pl.com.BaseTest@45b4c3a9]" started-at="2023-06-07T11:53:38 EET" name="startReport" finished-at="2023-06-07T11:53:39 EET" duration-ms="409" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReport -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:test.pl.com.BaseTest@45b4c3a9]" started-at="2023-06-07T11:54:21 EET" name="endReport" finished-at="2023-06-07T11:54:21 EET" duration-ms="727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- test.pl.com.BaseTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

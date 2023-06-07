@@ -2,6 +2,7 @@ package model.pl.com;
 
 import command.pl.com.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class TravelCreateForm extends PageBase {
@@ -12,12 +13,8 @@ public class TravelCreateForm extends PageBase {
     }
 
 
-    public void CreateForm(String firstName,
-                           String lastName,
-                           String phone,
-                           String  email,
-                           String password,
-                           String confirmpassword){
+    public void CreateForm(String username,
+                           String password){
 
 
 
@@ -28,47 +25,25 @@ public class TravelCreateForm extends PageBase {
         WaitCommandControl waitCommandControl= new WaitCommandControl();
         ConcreteWaitCommand concreteWaitCommand = new ConcreteWaitCommand(driver);
         waitCommandControl.setCommand(concreteWaitCommand);
-        waitCommandControl.waitUntilVisible(eles.get("firstname") );//By.cssSelector("input[name='firstname']"
-        commandControl.performSendKeys(eles.get("firstname"),firstName);
-        commandControl.performSendKeys(eles.get("lastname"),lastName);
-        commandControl.performSendKeys(eles.get("phone"),phone);
-        commandControl.performSendKeys(eles.get("email"),email);
-        commandControl.performSendKeys(eles.get("password"),password);
-        commandControl.performSendKeys(eles.get("confirmpassword"),confirmpassword);
+        waitCommandControl.waitUntilVisible(eles.get("username") );//By.cssSelector("input[name='firstname']"
+        commandControl.performSendKeys(eles.get("username"),username);
+        commandControl.performSendKeys(eles.get("password"), password+ Keys.ENTER);
+
         commandControl.setCommand(clickCommand);
-        waitCommandControl.waitUntilVisible(eles.get("cookies"));
-        commandControl.performClick(eles.get("cookies"));
+        commandControl.attrib3(By.xpath(""), "");
+        waitCommandControl.waitUntilVisible(eles.get("link1"));
+        waitCommandControl.waitUntilVisible(eles.get("link1"));
 
+        commandControl.performClick(eles.get("link1"));
+        waitCommandControl.waitUntilVisible(eles.get("search"));
+        waitCommandControl.waitUntilVisible(eles.get("manage"));
+        commandControl.performClick(eles.get("manage"));
+        waitCommandControl.waitUntilVisible2(eles.get("waiter"));
+        commandControl.setCommand(clickCommand);
+        waitCommandControl.waitUntilVisible(eles.get("date"));
+        commandControl.attrib(eles.get("date"),"title" ,"02-02/2023");
 
-        waitCommandControl.waitUntilVisible(eles.get("submit"));
-        commandControl.performClick(eles.get("submit"));
-
-    }
-
-    public String getValidationMessageCaseMissingFirstName(){
-        WaitCommandControl waitCommandControl= new WaitCommandControl();
-        ConcreteWaitCommand concreteWaitCommand = new ConcreteWaitCommand(driver);
-        waitCommandControl.setCommand(concreteWaitCommand);
-        waitCommandControl.waitUntilVisible(eles.get("firstnamevalidation"));
-        return driver.findElement(eles.get("firstnamevalidation")).getText();
-    }
-
-    public String getValidationMessageInvalidEmail(){
-        WaitCommandControl waitCommandControl= new WaitCommandControl();
-        ConcreteWaitCommand concreteWaitCommand = new ConcreteWaitCommand(driver);
-        waitCommandControl.setCommand(concreteWaitCommand);
-        waitCommandControl.waitUntilVisible(eles.get("validemailvalidation"));
-        return driver.findElement(eles.get("validemailvalidation")).getText();
-    }
-
-
-    public String getValidationMessageEmailAleadyExists(){
-        WaitCommandControl waitCommandControl= new WaitCommandControl();
-        ConcreteWaitCommand concreteWaitCommand = new ConcreteWaitCommand(driver);
-        waitCommandControl.setCommand(concreteWaitCommand);
-        waitCommandControl.waitUntilVisible(eles.get("emailalreadyexistsvalidation"));
-        return driver.findElement(eles.get("emailalreadyexistsvalidation")).getText();
-    }
+   }
 
 
 

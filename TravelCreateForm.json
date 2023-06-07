@@ -1,59 +1,42 @@
 [
-
-
   {
-    "name":"firstname",
-    "type":"CssSelector",
-    "value":"input[name='firstname']"
-  },
-  {
-    "name":"lastname",
-    "type":"CssSelector",
-    "value":"input[name='lastname']"
-  },
-  {
-    "name":"phone",
-    "type":"CssSelector",
-    "value":"input[name='phone']"
-  },
-  {
-    "name":"email",
-    "type":"CssSelector",
-    "value":"input[name='email']"
+    "name":"username",
+    "type":"XPath",
+    "value":"//input[contains(@id,'it1')][@name='it1']"
   },
   {
     "name":"password",
-    "type":"CssSelector",
-    "value":"input[name='password']"
+    "type":"XPath",
+    "value":"//input[contains(@id,'it2')][@name='it2']"
   },
   {
-    "name":"confirmpassword",
-    "type":"CssSelector",
-    "value":"input[name='confirmpassword']"
+    "name":"link1",
+    "type":"XPath",
+    "value":"//body//form[@id='f1']//a[contains(@id,'OasisHedarToolBar')][contains(@class,'hamburger-menu-btn xgn p_AFTextOnly')]"
   },
   {
-    "name":"cookies",
-    "type":"CssSelector",
-    "value":"button[role='button']"
+    "name":"search",
+    "type":"XPath",
+    "value":"//*[@id='search']"
   },
   {
-    "name":"submit",
-    "type":"CssSelector",
-    "value":"button[type='submit']"
+    "name":"manage",
+    "type":"XPath",
+    "value":"//span[text()='Manage Approvals']"
+   },
+  {
+    "name":"waiter",
+    "type":"XPath",
+    "value":"//*[@id='pt1:pgl1']"
   },
   {
-    "name":"firstnamevalidation",
-    "type":"CssSelector",
-    "value":".alert.alert-danger>p"
+    "name":"date",
+    "type":"XPath",
+    "value":"//a[@aria-label='Select Date']"
   },
   {
-    "name":"validemailvalidation",
-    "type":"CssSelector",
-    "value":".alert.alert-danger>p"
-  },
-  {
-    "name":"emailalreadyexistsvalidation",
-    "type":"CssSelector",
-    "value":".alert.alert-danger"
+    "name":"mmmm",
+    "type":"XPath",
+    "value":"//form[@id='f1']"
   }
 ]

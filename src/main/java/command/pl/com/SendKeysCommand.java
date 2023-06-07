@@ -24,6 +24,10 @@ public class SendKeysCommand implements Command {
         //do nothing;
     }
 
+    @Override
+    public void execute(By by, String txt, String txt2) {
+
+    }
 
 
     public void execute(By by, String txt, int index) {

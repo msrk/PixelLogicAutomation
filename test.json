@@ -1,12 +1,12 @@
 [
   {
-    "name":"Star",
-    "type":"CssSelector",
-    "value":".listing-area .container-fluid>div>div:nth-child(2)>div>div>i"
+    "name":"username",
+    "type":"XPath",
+    "value":"//input[@id='it1::content'][@name='it1']"
   },
   {
-    "name":"updateInfo",
+    "name":"password",
     "type":"XPath",
-    "value":".fullHeight.mainCompCont button"
+    "value":"//input[@id='it2::content'][@name='it2']"
   }
 ]

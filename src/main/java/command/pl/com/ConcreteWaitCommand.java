@@ -17,8 +17,18 @@ public class ConcreteWaitCommand implements WaitCommand {
         w.until(new WaitUntilVisisble(by));
     }
 
+    @Override
+    public void executec(By by) {
+        w.until(new WaitUntilVisisble(by));
+        w.until(new WaitUntilInVisisble(by));
+    }
+
     public void executea(By by,String name) {
-        w.until(new WaitUntilVisisbleWithName(by,name));
+        //w.until(new WaitUntilVisisblst(by));
+        webdriverInstance.navigate().refresh();
+        //w.until(new WaitUntilVisisble(By.xpath("//*[@id='pt1:pgl1']")));
+        //w.until(new WaitUntilInVisisble(By.xpath("//*[@id='pt1:pgl1']")));
+
     }
     /*@Override
     public void executea(String by) {
@@ -30,15 +40,45 @@ public class ConcreteWaitCommand implements WaitCommand {
     public void execute(String by) {
         w.until(ExpectedConditions.visibilityOf(webdriverInstance.findElementByXPath(by)));
     }*/
-
-    public class WaitUntilVisisble implements ExpectedCondition<Boolean> {
+    public static class WaitUntilVisisblst implements ExpectedCondition<Boolean> {
         By ele;
+
+        public WaitUntilVisisblst(By ele) {
+            this.ele = ele;
+
+        }
+
+        public Boolean apply(WebDriver o) {
+            if ( o.findElement(ele).isEnabled())
+                return true;
+            else
+                return false;
+        }
+    }
+    public static class WaitUntilVisisble implements ExpectedCondition<Boolean> {
+        By ele;
+
         public WaitUntilVisisble(By ele) {
+            this.ele = ele;
+
+        }
+
+        public Boolean apply(WebDriver o) {
+            if (o.findElement(ele).isDisplayed() && o.findElement(ele).isEnabled())
+                return true;
+            else
+                return false;
+        }
+    }
+
+    public class WaitUntilInVisisble implements ExpectedCondition<Boolean> {
+        By ele;
+        public WaitUntilInVisisble(By ele) {
             this.ele=ele;
 
         }
         public Boolean apply(WebDriver o) {
-            if(o.findElement(ele).isDisplayed() && o.findElement(ele).isEnabled())
+            if(!o.findElement(ele).isDisplayed() )
                 return true;
             else
                 return false;

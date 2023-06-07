@@ -11,12 +11,14 @@ public class WaitCommandControl {
     }
 
     public void waitUntilVisibleWitthText(By by, String name){
-        cmd.executea(by, name);
+        cmd.executea(by,"");
     }
     public void waitUntilVisible(By by){
         cmd.execute(by);
     }
 
-
+    public void waitUntilVisible2(By by){
+        cmd.executec(by);
+    }
 
 }
